@@ -14,18 +14,19 @@ import android.net.wifi.WifiManager;
 public class WifiBroadcastReceiver extends BroadcastReceiver {
     Context context;
 
-    public WifiBroadcastReceiver(){
+    public WifiBroadcastReceiver() {
 
     }
-    public WifiBroadcastReceiver(Context context){
-        this.context =  context;
+
+    public WifiBroadcastReceiver(Context context) {
+        this.context = context;
 
     }
 
     @Override
     public void onReceive(Context context, Intent intent) {
         String action = intent.getAction();
-        if (WifiManager.SUPPLICANT_STATE_CHANGED_ACTION .equals(action)) {
+        if (WifiManager.SUPPLICANT_STATE_CHANGED_ACTION.equals(action)) {
             SupplicantState state = intent.getParcelableExtra(WifiManager.EXTRA_NEW_STATE);
             if (SupplicantState.isValidState(state)
                     && state == SupplicantState.COMPLETED) {
@@ -35,7 +36,9 @@ public class WifiBroadcastReceiver extends BroadcastReceiver {
         }
     }
 
-    /** Detect you are connected to a specific network. */
+    /**
+     * Detect you are connected to a specific network.
+     */
     private boolean checkConnectedToDesiredWifi() {
         boolean connected = false;
         String desiredMacAddress = "router mac address";
@@ -46,13 +49,14 @@ public class WifiBroadcastReceiver extends BroadcastReceiver {
         WifiInfo wifi = wifiManager.getConnectionInfo();
         if (wifi != null) {
             // get current router Mac address
-            try{
-            String bssid = wifi.getBSSID();
-            connected = desiredMacAddress.equals(bssid);
+            try {
+                String bssid = wifi.getBSSID();
+                connected = desiredMacAddress.equals(bssid);
             } catch (Exception e) {
-            e.printStackTrace();
+                e.printStackTrace();
             }
-
+        }
         return connected;
+
     }
 }
