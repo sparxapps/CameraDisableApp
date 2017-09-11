@@ -38,6 +38,7 @@ public class WifiBroadcastReceiver extends BroadcastReceiver {
 
     /**
      * Detect you are connected to a specific network.
+     * gbkjghjghjg
      */
     private boolean checkConnectedToDesiredWifi() {
         boolean connected = false;
