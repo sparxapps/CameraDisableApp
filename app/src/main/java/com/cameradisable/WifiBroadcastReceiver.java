@@ -46,9 +46,12 @@ public class WifiBroadcastReceiver extends BroadcastReceiver {
         WifiInfo wifi = wifiManager.getConnectionInfo();
         if (wifi != null) {
             // get current router Mac address
+            try{
             String bssid = wifi.getBSSID();
             connected = desiredMacAddress.equals(bssid);
-        }
+            } catch (Exception e) {
+            e.printStackTrace();
+            }
 
         return connected;
     }
