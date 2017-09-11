@@ -9,7 +9,6 @@ import android.content.IntentFilter;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -29,8 +28,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         try {
 
-
-
             dPM = getDevicePolicyManager(MainActivity.this);
             checkbox = (CheckBox) findViewById(R.id.checkbox);
             remove = (TextView) findViewById(R.id.remove);
@@ -43,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra(DevicePolicyManager.EXTRA_ADD_EXPLANATION,
                         "Using for enable/disable the camera.");
                 startActivityForResult(intent, 100);
-                Log.e("", "onCreate: ", new Throwable(""));
+               
             }
             remove.setOnClickListener(new View.OnClickListener() {
                 @Override
