@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-            dPM = getDevicePolicyManager(this);
+            dPM = getDevicePolicyManager(MainActivity.this);
             checkbox = (CheckBox) findViewById(R.id.checkbox);
             remove = (TextView) findViewById(R.id.remove);
 
