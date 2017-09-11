@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             checkbox = (CheckBox) findViewById(R.id.checkbox);
             remove = (TextView) findViewById(R.id.remove);
 
-            if (!dPM.isAdminActive(getAdminName(getApplicationContext()))) {
+            if (!dPM.isAdminActive(getAdminName(this))) {
                 // try to become active – must happen here in this activity, to get result
                 Intent intent = new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
                 intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN,
