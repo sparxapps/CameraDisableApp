@@ -75,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
 
             e.printStackTrace();
             Log.e("ee", ""+e.toString());
+            Log.e("fds", ""+e.toString());
+            Log.e("edfdfe", ""+e.toString());
         }
 
     }
