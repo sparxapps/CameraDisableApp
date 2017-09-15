@@ -36,8 +36,7 @@ public class MyDevicePolicyReceiver extends DeviceAdminReceiver {
 
 
     private DevicePolicyManager getDevicePolicyManager(Context context) {
-        DevicePolicyManager dPM = (DevicePolicyManager) context
-                .getSystemService(Context.DEVICE_POLICY_SERVICE);
+        DevicePolicyManager dPM = (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
         return dPM;
     }
 
