@@ -39,14 +39,12 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, getAdminName(this));
                 intent.putExtra(DevicePolicyManager.EXTRA_ADD_EXPLANATION, "Using for enable/disable the camera.");
                 startActivityForResult(intent, 100);
-
             }
             remove.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     //dPM.removeActiveAdmin(getAdminName(MainActivity.this));
                     BroadcastReceiver broadcastReceiver = new WifiBroadcastReceiver(MainActivity.this);
-
                     IntentFilter intentFilter = new IntentFilter();
                     intentFilter.addAction(WifiManager.SUPPLICANT_STATE_CHANGED_ACTION);
                     registerReceiver(broadcastReceiver, intentFilter);
@@ -70,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
             });
 
         } catch (Exception e) {
-
             e.printStackTrace();
             Log.e("ee", ""+e.toString());
             Log.e("fds", ""+e.toString());

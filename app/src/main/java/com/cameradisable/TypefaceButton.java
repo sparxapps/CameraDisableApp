@@ -36,7 +36,4 @@ public class TypefaceButton extends Button {
             a.recycle();
         }
     }
-
-
-
 }
